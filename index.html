@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant lists</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1>Foame?</h1>
+
+    <div class="search-wrapper">
+      <label for="search">Search</label>
+      <input type="search" id="search" data-search />
+    </div>
+
+    <div class="table-wrapper">
+      <!-- <img src="assets/glovo.svg" alt="glovo" /> -->
+      <div class="glovo-wrapper">
+        <p class="table-title">Glovo</p>
+        <table id="glovoTable" class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Restaurant Name</th>
+              <th>Restaurant Image</th>
+              <th>Restaurant Discount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Table content will be added dynamically using JavaScript -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tazz-wrapper">
+        <!-- <img src="assets/tazz.png" alt="tazz" /> -->
+        <p class="table-title">Tazz</p>
+        <table id="tazzTable" class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Restaurant Name</th>
+              <th>Restaurant Image</th>
+              <th>Restaurant Discount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Table content will be added dynamically using JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
