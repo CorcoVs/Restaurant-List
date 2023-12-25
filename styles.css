@@ -19,7 +19,7 @@ body {
   background-size: cover;
   background-position: center;
   height: 100vh;
-  overflow: hidden;
+  overflow: auto;
   color: rgb(48, 49, 47);
   width: 100%;
 }
@@ -40,7 +40,6 @@ th,
 td {
   box-sizing: border-box;
   border: 1px solid #dddddd;
-  text-align: left;
   padding: 8px;
   border-radius: 10px; /* Set the desired border radius value for cells */
 }
@@ -116,6 +115,18 @@ input {
   }
 }
 
+@media (max-width: 768px) {
+  .table-wrapper {
+    flex-direction: column;
+  }
+  body {
+    background-image: url(victoria-shes-UC0HZdUitWY-unsplash.jpg);
+  }
+  h1 {
+    display: none;
+  }
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -123,3 +134,9 @@ input {
   text-align: center;
 }
 
+.glovo-wrapper,
+.tazz-wrapper { 
+  width: 100%;
+  max-width: 100%;
+  margin: 10px;
+}
