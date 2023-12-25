@@ -1,11 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Function to populate the table from a CSV file
-  const populateTable = (tableId, csvFile) => {
+  const populateTable = (tableId, tableContainerId, csvFile) => {
+    const tableContainer = document.getElementById(tableContainerId);
+
     fetch(csvFile)
       .then((response) => response.text())
       .then((data) => {
         // Parse CSV data
         const rows = data.split("\n");
+
+        // Clear existing table content
+        document.querySelector(`#${tableId} tbody`).innerHTML = '';
 
         // Iterate through rows and populate the table
         for (let i = 1; i < rows.length; i++) {
@@ -62,15 +67,19 @@ document.addEventListener("DOMContentLoaded", function () {
           .forEach((img) => {
             observer.observe(img);
           });
+
+        // Separate scroll bar for each table
+        tableContainer.style.overflowY = "auto";
+        tableContainer.style.maxHeight = "700px"; // Adjust the maximum height as needed
       })
       .catch((error) => console.error("Error fetching CSV file:", error));
   };
 
   // Populate Glovo table
-  populateTable("glovoTable", "glovoRestaurants.csv");
+  populateTable("glovoTable", "glovoTableContainer", "glovoRestaurants.csv");
 
   // Populate Tazz table
-  populateTable("tazzTable", "tazzRestaurants.csv");
+  populateTable("tazzTable", "tazzTableContainer", "tazzRestaurants.csv");
 
   // Search functionality
   const searchInput = document.querySelector("[data-search]");

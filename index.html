@@ -13,39 +13,20 @@
     />
   </head>
   <body>
-    <h1>Foame?</h1>
+    <h1>Compara Glovo si Tazz</h1>
 
     <div class="search-wrapper">
-      <label for="search">Search</label>
-      <input type="search" id="search" data-search />
+      <input type="search" id="search" placeholder="Search" data-search />
     </div>
 
     <div class="table-wrapper">
-      <!-- <img src="assets/glovo.svg" alt="glovo" /> -->
-      <div class="glovo-wrapper">
-        <p class="table-title">Glovo</p>
+      <div class="glovo-wrapper wrapper">
+        <img id="glovo-icon" src="assets/glovo.svg" alt="glovo" />
+        <div class="table-container" id="glovoTableContainer">
         <table id="glovoTable" class="table">
           <thead>
             <tr>
-              <th>ID</th>
-              <th>Restaurant Name</th>
-              <th>Restaurant Image</th>
-              <th>Restaurant Discount</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Table content will be added dynamically using JavaScript -->
-          </tbody>
-        </table>
-      </div>
-
-      <div class="tazz-wrapper">
-        <!-- <img src="assets/tazz.png" alt="tazz" /> -->
-        <p class="table-title">Tazz</p>
-        <table id="tazzTable" class="table">
-          <thead>
-            <tr>
-              <th>ID</th>
+              <th id="id">ID</th>
               <th>Restaurant Name</th>
               <th>Restaurant Image</th>
               <th>Restaurant Discount</th>
@@ -57,6 +38,26 @@
         </table>
       </div>
     </div>
+
+      <div class="tazz-wrapper wrapper">
+        <img id= "tazz-icon" src="assets/tazz.jpeg" alt="tazz" />
+        <div class="table-container" id="tazzTableContainer">
+        <table id="tazzTable" class="table">
+          <thead>
+            <tr>
+              <th id="id">ID</th>
+              <th>Restaurant Name</th>
+              <th>Restaurant Image</th>
+              <th>Restaurant Discount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Table content will be added dynamically using JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 
     <script src="script.js"></script>
   </body>
