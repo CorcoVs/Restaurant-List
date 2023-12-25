@@ -4,14 +4,33 @@
   margin: 0;
   padding: 0;
 }
+        
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 8px;
+  background-color: #95a5a6;
+  border: 1px solid #cacaca;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: #2c3e50;
+}
 
 a {
   text-decoration: none;
-  color: black;
+  color: rgb(59, 59, 59);
 }
 
 a:hover {
-  color: rgb(236, 181, 78);
+  color: rgb(128, 96, 38);
+}
+
+tbody tr:hover {
+  background-color: rgb(189, 189, 189);
 }
 
 body {
@@ -19,7 +38,6 @@ body {
   background-size: cover;
   background-position: center;
   overflow:hidden;
-  overflow: auto;
   color: rgb(48, 49, 47);
   width: 100%;
 }
@@ -60,6 +78,10 @@ h1 {
   display: flex;
   justify-content: center;
   align-self: center;
+  padding: 0.2em;
+  background-color: rgba(228, 225, 225, 0.514);
+  max-width: 50vw;
+  margin: auto;
 }
 
 .search-wrapper {
@@ -89,15 +111,19 @@ input {
   display: flex;
   justify-content: space-around;
   overflow: hidden;
+  gap: 25px;
 }
 
 #tazz-icon {
   max-width: 64px;
-  margin-bottom: 10px; /* Adjust margin as needed */
+  padding-bottom: 10px;
+  margin: auto;
 }
 
 #glovo-icon {
-  margin-bottom: 10px; /* Adjust margin as needed */
+  max-width: 64px;
+  padding-bottom: 10px;
+  margin: auto; /* Adjust margin as needed */
 }
 
 /* Hide ID column below 1300px */
@@ -128,16 +154,28 @@ input {
   }
 }
 
+/* @media (min-width: 769px) {
+  body {
+    background-image: url(victoria-shes-UC0HZdUitWY-unsplash.jpg);
+    overflow: auto;
+  }
+  h1 {
+    display: none;
+  }
+} */
+
 .wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  text-align: center; 
+  width: 100vw;
+  background-color: rgba(129, 129, 129, 0.329);
+  padding-top: 5px;
+  border: 1px solid #2c3e50;
 }
 
 .glovo-wrapper,
 .tazz-wrapper { 
-  width: 100%;
-  max-width: 100%;
-  margin: 10px;
-}
+  width: 85%;
+  margin: auto;
+} 

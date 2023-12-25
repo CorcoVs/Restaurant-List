@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const populateTable = (tableId, tableContainerId, csvFile) => {
     const tableContainer = document.getElementById(tableContainerId);
 
+    // Fetch the CSV file
     fetch(csvFile)
       .then((response) => response.text())
       .then((data) => {
@@ -62,15 +63,15 @@ document.addEventListener("DOMContentLoaded", function () {
           });
         });
 
+        // Select all images with data-src attribute
         document
           .querySelectorAll(`#${tableId} img[data-src]`)
           .forEach((img) => {
             observer.observe(img);
           });
 
-        // Separate scroll bar for each table
         tableContainer.style.overflowY = "auto";
-        tableContainer.style.maxHeight = "700px"; // Adjust the maximum height as needed
+        tableContainer.style.maxHeight = "72vh"; // Adjust the maximum table height
       })
       .catch((error) => console.error("Error fetching CSV file:", error));
   };
@@ -84,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Search functionality
   const searchInput = document.querySelector("[data-search]");
 
+  // Listen for input events to filter the table
   searchInput.addEventListener("input", (e) => {
     const searchTerm = e.target.value.toLowerCase();
 
@@ -100,4 +102,33 @@ document.addEventListener("DOMContentLoaded", function () {
         : "none";
     });
   });
+});
+
+// Function to scroll to the top of the page
+document.addEventListener("DOMContentLoaded", function () {
+  // Function to scroll to the top of the page
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  // Check the screen width and show the scroll-to-top button accordingly
+  const checkScreenWidth = () => {
+    const screenWidth = window.innerWidth;
+
+    // Adjust the threshold according to your needs (695px in this case)
+    const thresholdWidth = 695;
+
+    if (screenWidth > thresholdWidth) {
+      scrollToTop();
+    }
+  };
+
+  // Call the checkScreenWidth function when the page loads
+  checkScreenWidth();
+
+  // Listen for resize events to check the screen width dynamically
+  window.addEventListener("resize", checkScreenWidth);
 });
