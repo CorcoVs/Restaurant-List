@@ -59,7 +59,7 @@ td {
   box-sizing: border-box;
   border: 1px solid #dddddd;
   padding: 8px;
-  border-radius: 10px; /* Set the desired border radius value for cells */
+  border-radius: 10px; /* Set the border radius for cells */
 }
 
 th {
@@ -67,7 +67,7 @@ th {
   position: sticky;
   top: 0;
   z-index: 2;
-  border-radius: 10px 10px 0 0; /* Set the desired border radius value for table header cells */
+  border-radius: 10px 10px 0 0;
 }
 
 thead th {
@@ -97,7 +97,6 @@ input {
   border: 1px solid rgb(74, 74, 74);
   border-radius: 8px;
   padding: 5px;
-  /* width: 500px; */
   width: 30%;
 }
 
@@ -124,11 +123,11 @@ input {
 #glovo-icon {
   max-width: 50px;
   padding-bottom: 10px;
-  margin: auto; /* Adjust margin as needed */
+  margin: auto;
 }
 
 /* Hide ID column below 1300px */
-@media (max-width: 1300px) {
+/* @media (max-width: 1300px) {
   #tazzTable th#id,
   #tazzTable td:nth-child(1) {
     display: none;
@@ -138,6 +137,14 @@ input {
 @media (max-width: 1300px) {
   #glovoTable th#id,
   #glovoTable td:nth-child(1) {
+    display: none;
+  }
+} */
+
+/* Hide ID column below 1300px */
+@media (max-width: 1300px) {
+  .wrapper th#id,
+  .wrapper td:nth-child(1) {
     display: none;
   }
 }
@@ -154,16 +161,6 @@ input {
     display: none;
   }
 }
-
-/* @media (min-width: 769px) {
-  body {
-    background-image: url(victoria-shes-UC0HZdUitWY-unsplash.jpg);
-    overflow: auto;
-  }
-  h1 {
-    display: none;
-  }
-} */
 
 .wrapper {
   display: flex;
