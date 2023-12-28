@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
 }
-        
+
 ::-webkit-scrollbar {
   width: 12px;
 }
@@ -37,7 +37,7 @@ body {
   background-image: url("brooke-lark-wMzx2nBdeng-unsplash.jpg");
   background-size: cover;
   background-position: center;
-  overflow:hidden;
+  overflow: hidden;
   color: rgb(48, 49, 47);
   width: 100%;
 }
@@ -109,19 +109,20 @@ input {
 
 .table-wrapper {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   overflow: hidden;
   gap: 25px;
+  padding: 2.5em;
 }
 
 #tazz-icon {
-  max-width: 64px;
+  max-width: 50px;
   padding-bottom: 10px;
   margin: auto;
 }
 
 #glovo-icon {
-  max-width: 64px;
+  max-width: 50px;
   padding-bottom: 10px;
   margin: auto; /* Adjust margin as needed */
 }
@@ -167,7 +168,7 @@ input {
 .wrapper {
   display: flex;
   flex-direction: column;
-  text-align: center; 
+  text-align: center;
   width: 100vw;
   background-color: rgba(129, 129, 129, 0.329);
   padding-top: 5px;
@@ -175,7 +176,17 @@ input {
 }
 
 .glovo-wrapper,
-.tazz-wrapper { 
+.tazz-wrapper {
   width: 85%;
   margin: auto;
-} 
+}
+
+.tip {
+  text-align: center;
+  color: #001122;
+  font-size: 20px;
+  text-shadow: 1px 1px #2c3e50;
+  background-color: rgba(175, 171, 171, 0.185);
+  margin: auto;
+  max-width: 15em;
+}

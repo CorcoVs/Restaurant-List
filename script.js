@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const rows = data.split("\n");
 
         // Clear existing table content
-        document.querySelector(`#${tableId} tbody`).innerHTML = '';
+        document.querySelector(`#${tableId} tbody`).innerHTML = "";
 
         // Iterate through rows and populate the table
         for (let i = 1; i < rows.length; i++) {
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
           });
 
         tableContainer.style.overflowY = "auto";
-        tableContainer.style.maxHeight = "72vh"; // Adjust the maximum table height
+        tableContainer.style.maxHeight = "67vh"; // Adjust the maximum table height
       })
       .catch((error) => console.error("Error fetching CSV file:", error));
   };
