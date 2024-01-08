@@ -81,26 +81,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Populate Tazz table
   populateTable("tazzTable", "tazzTableContainer", "tazzRestaurants.csv");
+});
+// Search functionality
+const searchInput = document.querySelector("[data-search]");
 
-  // Search functionality
-  const searchInput = document.querySelector("[data-search]");
+// Listen for input events to filter the table
+searchInput.addEventListener("input", (e) => {
+  const searchTerm = e.target.value.toLowerCase();
 
-  // Listen for input events to filter the table
-  searchInput.addEventListener("input", (e) => {
-    const searchTerm = e.target.value.toLowerCase();
+  // Select all restaurant name cells in both tables
+  const restaurantNameCells = document.querySelectorAll(
+    "#glovoTable tbody tr td:nth-child(2), #tazzTable tbody tr td:nth-child(2)"
+  );
 
-    // Select all restaurant name cells in both tables
-    const restaurantNameCells = document.querySelectorAll(
-      "#glovoTable tbody tr td:nth-child(2), #tazzTable tbody tr td:nth-child(2)"
-    );
-
-    // Iterate through each restaurant name cell and toggle visibility based on the search term
-    restaurantNameCells.forEach((cell) => {
-      const restaurantName = cell.textContent.toLowerCase();
-      cell.parentNode.style.display = restaurantName.includes(searchTerm)
-        ? ""
-        : "none";
-    });
+  // Iterate through each restaurant name cell and toggle visibility based on the search term
+  restaurantNameCells.forEach((cell) => {
+    const restaurantName = cell.textContent.toLowerCase();
+    cell.parentNode.style.display = restaurantName.includes(searchTerm)
+      ? ""
+      : "none";
   });
 });
 
