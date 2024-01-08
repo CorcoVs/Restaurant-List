@@ -33,12 +33,6 @@ tbody tr:hover {
   background-color: rgba(223, 223, 223, 0.856);
 }
 
-@media (max-width: 500px) {
-  tbody #name {
-    background-color: aqua;
-  }
-}
-
 body {
   background-image: url("4453736.jpg");
   background-color: #0e0f11;
