@@ -34,9 +34,11 @@ tbody tr:hover {
 }
 
 body {
-  background-image: url("brooke-lark-wMzx2nBdeng-unsplash.jpg");
+  background-image: url("4453736.jpg");
+  background-color: #0e0f11;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   overflow: hidden;
   color: rgb(48, 49, 47);
   width: 100%;
@@ -79,9 +81,13 @@ h1 {
   justify-content: center;
   align-self: center;
   padding: 0.2em;
-  background-color: rgba(228, 225, 225, 0.514);
+  color: #cacaca;
+  background-color: rgba(63, 63, 63, 0.644);
   max-width: 50vw;
-  margin: auto;
+  margin: 5px auto;
+  max-width: 15em;
+  padding: 8px;
+  border-radius: 10em;
 }
 
 .search-wrapper {
@@ -162,6 +168,15 @@ input {
   }
 }
 
+/*Hide the image column below 500px*/
+@media screen and (max-width: 500px) {
+  .wrapper th#image,
+  .wrapper td:nth-child(3),
+  .wrapper th:nth-child(3) {
+    display: none;
+  }
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -180,10 +195,11 @@ input {
 
 .tip {
   text-align: center;
-  color: #001122;
+  color: #dad9d9;
   font-size: 20px;
-  text-shadow: 1px 1px #2c3e50;
-  background-color: rgba(175, 171, 171, 0.185);
+  background-color: rgba(37, 37, 37, 0.699);
   margin: auto;
   max-width: 15em;
+  padding: 8px;
+  border-radius: 10em;
 }
