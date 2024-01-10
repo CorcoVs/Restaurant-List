@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Restaurant lists</title>
+    <title>Combined Restaurant List</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,54 +13,30 @@
     />
   </head>
   <body>
-    <h1>Compara ofertele Glovo si Tazz</h1>
+    <h1>Hangry</h1>
 
     <div class="search-wrapper">
       <input type="search" id="search" placeholder="Search" data-search />
     </div>
 
-    <div class="tip"><p>Click pe numele restaurantului*</p></div>
+    <div class="tip"><p>Click pe reducere / Visit</p></div>
 
-    <div class="table-wrapper">
-      <div class="glovo-wrapper wrapper">
-        <img id="glovo-icon" src="assets/glovo.svg" alt="glovo" />
-        <div class="table-container" id="glovoTableContainer">
-          <table id="glovoTable" class="table">
-            <thead>
-              <tr>
-                <th id="id">ID</th>
-                <th>Name</th>
-                <th>Image</th>
-                <th>Discount</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- Table content will be added dynamically using JavaScript -->
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div class="tazz-wrapper wrapper">
-        <img id="tazz-icon" src="assets/tazz.jpeg" alt="tazz" />
-        <div class="table-container" id="tazzTableContainer">
-          <table id="tazzTable" class="table">
-            <thead>
-              <tr>
-                <th id="id">ID</th>
-                <th>Name</th>
-                <th>Image</th>
-                <th>Discount</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- Table content will be added dynamically using JavaScript -->
-            </tbody>
-          </table>
-        </div>
-      </div>
+    <div class="table-wrapper" id="combinedTableContainer">
+      <table id="combinedTable" class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Discount tazz</th>
+            <th>Discount glovo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Table content will be added dynamically using JavaScript -->
+        </tbody>
+      </table>
     </div>
-
     <script src="script.js"></script>
   </body>
 </html>
