@@ -15,4 +15,4 @@ Hangry is a web application designed to help users compare current restaurant of
 3. Use the search bar to find specific restaurants.
 4. Click on discounts to visit the respective platforms.
 
-Feel free to contribute or report issues!
+Contributions are welcome! If you have ideas for improvements, want to add more Cluj-based restaurants, or fix a bug, feel free to contribute to the project.
