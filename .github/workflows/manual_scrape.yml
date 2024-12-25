@@ -11,6 +11,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: List files in the repository
+        run: |
+          ls -R  # List all files in the repository
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
@@ -23,8 +27,8 @@ jobs:
 
       - name: Run scrapers
         run: |
-          python tazz_scraper.py
-          python glovo_scrap.py
+          python tazz_scraper.py  # Make sure this path is correct
+          python glovo_scrap.py   # Make sure this path is correct
 
       - name: Commit and Push CSV Updates
         run: |
