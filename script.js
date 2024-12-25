@@ -158,23 +158,44 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch((error) => console.error("Error fetching CSV files:", error));
 });
 
+document.getElementById("updateCSV").onclick = () => {
+  fetch(
+    "https://api.github.com/repos/CorcoVs/Restaurant-List/actions/workflows/manual_scrape.yml/dispatches",
+    {
+      method: "POST",
+      headers: {
+        Accept: "application/vnd.github.everest-preview+json",
+        Authorization:
+          "Bearer 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",
+      },
+      body: JSON.stringify({ ref: "main" }),
+    }
+  ).then((response) => {
+    if (response.ok) {
+      alert("CSV update initiated!");
+    } else {
+      alert("Failed to trigger update. Check console for errors.");
+      console.error(response);
+    }
+  });
+};
+
 // Search functionality
 const searchInput = document.querySelector("[data-search]");
+let debounceTimer;
 
-// Listen for input events to filter the table
 searchInput.addEventListener("input", (e) => {
-  const searchTerm = e.target.value.toLowerCase();
-
-  // Select all restaurant name cells in the combined table
-  const restaurantNameCells = document.querySelectorAll(
-    "#combinedTable tbody tr td:nth-child(2)"
-  );
-
-  // Iterate through each restaurant name cell and toggle visibility based on the search term
-  restaurantNameCells.forEach((cell) => {
-    const restaurantName = cell.textContent.toLowerCase();
-    cell.parentNode.style.display = restaurantName.includes(searchTerm)
-      ? ""
-      : "none";
-  });
+  clearTimeout(debounceTimer);
+  debounceTimer = setTimeout(() => {
+    const searchTerm = e.target.value.toLowerCase();
+    const restaurantNameCells = document.querySelectorAll(
+      "#combinedTable tbody tr td:nth-child(2)"
+    );
+    restaurantNameCells.forEach((cell) => {
+      const restaurantName = cell.textContent.toLowerCase();
+      cell.parentNode.style.display = restaurantName.includes(searchTerm)
+        ? ""
+        : "none";
+    });
+  }, 300);
 });
