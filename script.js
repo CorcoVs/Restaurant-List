@@ -165,8 +165,7 @@ document.getElementById("updateCSV").onclick = () => {
       method: "POST",
       headers: {
         Accept: "application/vnd.github.everest-preview+json",
-        Authorization:
-          "Bearer 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",
+        Authorization: "Bearer ${{ secrets.MY_API_TOKEN }}",
       },
       body: JSON.stringify({ ref: "main" }),
     }
