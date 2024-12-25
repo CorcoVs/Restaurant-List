@@ -3,6 +3,9 @@ name: Manual Scrape and CSV Update
 on:
   workflow_dispatch:  # Manual trigger only
 
+permissions:
+  contents: write  # Allow write access to the contents of the repository
+
 jobs:
   scrape:
     runs-on: ubuntu-latest
