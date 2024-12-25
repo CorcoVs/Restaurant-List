@@ -27,8 +27,8 @@ jobs:
 
       - name: Run scrapers
         run: |
-          python tazz_scraper.py  # Make sure this path is correct
-          python glovo_scrap.py   # Make sure this path is correct
+          python tazz-scraper.py  # Correct the script name
+          python glovo-scrap.py   # Correct the script name
 
       - name: Commit and Push CSV Updates
         run: |
